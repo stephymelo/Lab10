@@ -1,44 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Votaciones</title>
-    <link rel="stylesheet" href="index.css"></link>
+    <link rel="stylesheet" href="index.css">
+    </link>
 </head>
+
 <body>
-    <div>
-        
+    <div id="mainContainer">
+        <div id="vacioContainer">
+
+        </div>
+
+        <div id="registerContainer">
+            <h4>Lapsus Napoleon Franco</h4>
+            <p class="subtitle">Registre el candidato para la encuesta</p>
+            <input id="identificacion" placeholder="Identifacion" type="text">
+            <input id="nombre" placeholder="Nombre" type="text">
+            <button id="registrar"  type="text">Registrar</button>
+            <p id="subtitle"> Vote por el candidato usando su ID</p>
+            <input id="candidato" placeholder="Candidato" type="text">
+            <button id="votar"  type="text">Votar</button>
+        </div>
+
+        <div id="buttonContainer">
+            <button id="verCandidatos" type="text">Ver Candidatos</button>
+            <button id="verVotaciones" type="text">Ver Votaciones</button>
+        </div>
+    
     </div>
-    <button id="verCandidatos"placeholder="Ver Candidatos"type="text"></button>"
-    <button id="verVotaciones"placeholder="Ver Votaciones"type="text"></button>"
+    
+    
+  
 
-    <div>
-        <h3 id="subtitle">Registrate</h3>
-        <input id="identificacion"placeholder="Identifacion"type="text">
-        <input id="nombre"placeholder="Nombre"type="text">
-        <button id="registrar"placeholder="Registrar"type="text"></button>
-        <h3 id="subtitle"> Vote por el candidato</h3>
-        <input id="candidato"placeholder="Candidato"type="text">
-        <button id="votar"placeholder="Votar"type="text"></button>"
-
-    </div>
+   
 
 
 
 
 
 
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="/__/firebase/7.24.0/firebase-app.js"></script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.24.0/firebase.js"></script>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="/__/firebase/7.24.0/firebase-analytics.js"></script>
 
 <!-- Initialize Firebase -->
-<script src="/__/firebase.js"></script>
-<script src="index.js"></script>
+<script>
+    var firebaseConfig = {
+    apiKey: "AIzaSyDzuEkFEiPXTyOriJ3batjhsOuE6uVLz5w",
+    authDomain: "lab10-ff082.firebaseapp.com",
+    databaseURL: "https://lab10-ff082.firebaseio.com",
+    projectId: "lab10-ff082",
+    storageBucket: "lab10-ff082.appspot.com",
+    messagingSenderId: "691775409946",
+    appId: "1:691775409946:web:8f45237d9a8d4dab93e6a3",
+    measurementId: "G-LVNXR950RF"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+    <script src="index.js"></script>
+    <script src="user.js"></script>
 
 </body>
+
 </html>

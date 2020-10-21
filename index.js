@@ -1,9 +1,10 @@
-const identifcacion=document.getElementById('indentificacion');
+const identifcacion=document.getElementById('identificacion');
 const nombre=document.getElementById('nombre');
 const candidato=document.getElementById('candidato');
 const registrarButton=document.getElementById('registrar');
 const verCandidatosButton=document.getElementById('verCandidatos');
 const verVotacionesButton=document.getElementById('verVotaciones')
+const votarButton=document.getElementById('votar')
 var database=firebase.database();
 
 /*  if(p!=p){
@@ -15,16 +16,31 @@ var database=firebase.database();
 registrar=()=>{
     let nombreValue=nombre.value;
     let idValue=identifcacion.value;
-    let candidatoValue=candidato.value;
-
-    let user = {
-        nombre:nombreValue,
-        identifcacion:idValue,
-    }
-
+    var user= new User(nombreValue,idValue);
     let json=JSON.stringify(user);
+    console.log(json);
     database.ref('users/').push().set(user);
 
-    registrarButton.addEventListener('click',registrar);
+}
+
+votacion=()=>{
+    let candidatoValue=candidato.value;
+
+    let voto={
+        candidato:candidatoValue,
+    }
+
+    let json=JSON.stringify(voto);
+    console.log(voto);
+    //database.ref('users/').push().set(user);
 
 }
+
+
+
+votarButton.addEventListener('click',votacion);
+registrarButton.addEventListener('click',registrar);
+
+
+
+
